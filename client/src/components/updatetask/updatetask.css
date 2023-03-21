@@ -1,0 +1,80 @@
+.container {
+  position: absolute;
+  top: 450px;
+  left: 77%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: #EE8C33;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.container h2 {
+  margin: 0 0 20px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+.container span{
+  color: #fff;
+  text-align: center;
+  margin-left: 2em;
+}
+.container .items {
+  position: relative;
+}
+
+.container .items input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.container .items label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 20px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.container .items input:focus ~ label,
+.container .items input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #030303;
+  font-size: 16px;
+}
+.form-buttons{
+  display: flex;
+  justify-content: center;
+  
+}
+.form-button{
+  padding: 10px 20px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 0.5s;
+  margin: 10px;
+}
+.form-button:hover{
+  color:#F9E0F5 ;
+}
+.radio-buttons{
+  margin-bottom:10px ;
+}
