@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  node-app:
+    image: task-server:0.1
+    ports:
+      - "8800:8800"
+
+  react-app:
+    image: task-client:0.1
+    ports:
+      - "3000:3000"
+    depends_on:
+      - node-app
