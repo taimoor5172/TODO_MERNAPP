@@ -6,10 +6,10 @@ const tasks = require('./routes/tasks');
 
 
 require('./dbConnection')
-dotenv.config();
+dotenv.config({path:"./config.env"});
 
 var corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: '*',
   credentials:  true
 }
 app.use(cors(corsOptions))
@@ -22,3 +22,6 @@ app.use("/", tasks);
 
 const port = process.env.PORT || 8800;
 app.listen(port,()=>console.log(`Server is running on port ${port}`));
+
+
+module.exports = app;

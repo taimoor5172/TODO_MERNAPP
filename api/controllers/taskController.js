@@ -21,8 +21,8 @@ module.exports= {
           creationTime:currentTime,
         });
         try {
-          await newTask.save();
-          res.status(200).json({message:"User has been added successfully"});
+          const addedTask = await newTask.save();
+          res.status(200).json({message:"Task added successfully",id:addedTask._id});
           }
           catch (err) {
             res.status(500).json(err);
@@ -84,7 +84,12 @@ module.exports= {
     deleteTask: async (req, res)=> {
         try{
             const deletedTask = await Task.findByIdAndDelete(req.params.id);
-            res.status(200).json({message:"Task has been deleted"});
+            if(deletedTask){
+              res.status(200).json({message:"Task has been deleted"});
+            }
+            else{
+              res.status(400).json({message:"Task not found"});
+            }
         }
         catch (err) {
             res.status(500).json(err);
@@ -100,7 +105,7 @@ module.exports= {
         res.status(200).json(task);
         }
         else{
-        res.status(404).json({message:"Task not found"});
+        res.status(400).json({message:"Task not found"});
         };
     }
     catch (err) {
