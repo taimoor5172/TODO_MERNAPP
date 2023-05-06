@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
+dotenv.config({path:"./config.env"});
 const cors = require("cors");
 const tasks = require('./routes/tasks');
 
 
 require('./dbConnection')
-dotenv.config({path:"./config.env"});
 
 var corsOptions = {
   origin: '*',

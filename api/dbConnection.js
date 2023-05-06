@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 try{
-    mongoose.connect("mongodb://localhost:27017/todo_db").then(() => {
+    let url = process.env.DB_URL+process.env.DB_NAME;
+    mongoose.connect(url).then(() => {
         console.log('connected to MongoDB')
     }).catch((err) => console.log(err));
 }
